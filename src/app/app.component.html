@@ -1,0 +1,26 @@
+<form>
+    <div class="form-group">
+        <label for="travelerName">Traveler Name</label>
+        <input type="text" class="form-control" name="travelerName" [(ngModel)]='travelerName'>
+    </div>
+    <div class="form-group">
+        <label for="travelDate">Date of Travel</label>
+        <input type="date" class="form-control" name="travelDate" [(ngModel)]='travelDate'>
+    </div>
+    <div class="form-group">
+        <label for="numOfTravelers"># of Travlers</label>
+        <input type="number" class="form-control" name="travelDate" [(ngModel)]='numOfTravelers'>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" [(ngModel)]='isInternational' name='isInternational'>
+        <label class="form-check-label" for="exampleCheck1">International Travel</label>
+    </div>
+</form>
+
+<div class="card-body" *ngIf="travelerName">
+    <h5 class="card-title">Travel Itinary</h5>
+    <p class="card-text">Traveler: {{travelerName}}</p>
+    <p class="card-text">Travel Date: {{travelDate}}</p>
+    <p class="card-text">International: {{isInternational }}</p>
+    <p class="card-text">{{(getPrice()) | currency}}</p>
+</div>
